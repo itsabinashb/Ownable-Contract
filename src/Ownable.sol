@@ -1,6 +1,17 @@
 //SPDX-License-Identifier: MIT
 pragma solidity 0.8.20;
 
+/**
+ * @title Ownable contract
+ * @author Abinash Burman (@itsabinashb)
+ * @notice :=
+ *  1. there are seperate functions to set each owner variables.
+ *  2. Same address cannot be assigned more than 1 time as owner.
+ *  3. address(0) cannot be assigned as owner.
+ *  4. Any of 3 owners can call all 3 functions to set new owners, usefull if a owner lost is private key then other owners can assign another address as admin.
+ *  5. Any owner renounce their ownership whenever they wants, after renouncing the variable will be set with zero address i.e address(0)
+ */
+
 abstract contract Ownable {
   address public owner1;
   address public owner2;
